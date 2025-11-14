@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promociones - Dulce Artesano</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <style>
+                body {
+            background: #f9f9f9;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #222;
+        }
+
+        /* --- ENCABEZADO --- */
+        .logo-header {
+            text-align: center;
+            padding: 1.5rem 0;
+            background: #fff;
+        }
+
+        .logo-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin: 0;
+        }
+
+        .logo-header p {
+            font-size: 1rem;
+            color: #555;
+            margin-top: 0.3rem;
+        }
+
+        /* --- MENÚ --- */
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .btn-nav {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 2px;
+            padding: 0.8rem 1.5rem;
+            text-transform: uppercase;
+            border-radius: 50px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .btn-nav:hover {
+            background: #fff;
+            color: #000;
+            border-color: #000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .btn-home {
+            background: #fff;
+            color: #000;
+            border: 2px solid #fff;
+        }
+
+        .btn-home:hover {
+            background: transparent;
+            color: #fff;
+            border-color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn-nav {
+                width: 80%;
+                text-align: center;
+            }
+        }
+
+        /* --- HERO PRINCIPAL --- */
+        .contact-hero {
+            background: #000;
+            color: #fff;
+            padding: 5rem 2rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            background-image: linear-gradient(135deg, #000 60%, #222);
+        }
+
+        .contact-hero h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .contact-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* --- TARJETAS DE CONTACTO --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            padding: 0 5%;
+        }
+
+        .contact-card {
+            background: #fff;
+            border: 4px solid #000;
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            border-radius: 15px;
+        }
+
+        .contact-card:hover {
+            background: #000;
+            color: #fff;
+            transform: translateY(-10px);
+        }
+
+        .contact-card-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-card h3 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card:hover a {
+            color: #fff;
+        }
+
+        .contact-card p {
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+            line-height: 1.6;
+        }
+
+        /* --- HORARIOS --- */
+        .schedule-section {
+            background: #fff;
+            border: 4px solid #000;
+            border-radius: 15px;
+            padding: 3rem;
+            text-align: center;
+            margin: 5rem auto;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .schedule-section h3 {
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .schedule-section p {
+            font-size: 1.1rem;
+            margin: 0.7rem 0;
+        }
+        .promo-hero {
+            background: #fff;
+            color: #000;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            border: 5px solid #000;
+        }
+
+        .promo-hero h2 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+        }
+
+        .promo-icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+        }
+
+        .featured-promo {
+            background: #000;
+            color: #fff;
+            padding: 5rem 3rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-promo::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255, 255, 255, 0.05) 10px,
+                rgba(255, 255, 255, 0.05) 20px
+            );
+            animation: move 20s linear infinite;
+        }
+
+        @keyframes move {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .featured-promo-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .featured-promo h3 {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .featured-promo p {
+            font-size: 1.5rem;
+            line-height: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .discount-badge {
+            display: inline-block;
+            background: #fff;
+            color: #000;
+            padding: 1.5rem 3rem;
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin: 2rem 0;
+            border: 3px solid #fff;
+        }
+
+        .promos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .promo-card {
+            background: #fff;
+            border: 4px solid #000;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .promo-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .promo-header {
+            background: #000;
+            color: #fff;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .promo-header h4 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .promo-content {
+            padding: 2.5rem;
+            text-align: center;
+        }
+
+        .promo-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .promo-price {
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 1.5rem 0;
+        }
+
+        .terms {
+            background: #f5f5f5;
+            border: 2px solid #000;
+            padding: 3rem;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .terms h3 {
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .terms p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .promo-hero h2 {
+                font-size: 2rem;
+                letter-spacing: 4px;
+            }
+
+            .featured-promo h3 {
+                font-size: 2rem;
+                letter-spacing: 3px;
+            }
+
+            .promos-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header-fixed">
+        <div class="logo-header">
+            <h1>DULCE ARTESANO</h1>
+            <p>Pastelería & Panadería</p>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="btn-nav btn-home">INICIO</a>
+            <a href="catalogo.html" class="btn-nav">CATÁLOGO</a>
+            <a href="menu.html" class="btn-nav">MENÚ</a>
+            <a href="reservas.html" class="btn-nav">RESERVAS</a>
+        </nav>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <div class="container">
+            <div class="promo-hero">
+                <div class="promo-icon">🎁</div>
+                <h2>PROMOCIONES ESPECIALES</h2>
+            </div>
+
+            <!-- Promoción Destacada -->
+            <div class="featured-promo">
+                <div class="featured-promo-content">
+                    <h3>🎉 PROMOCIÓN DE LANZAMIENTO</h3>
+                    <div class="discount-badge">15% OFF</div>
+                    <p>
+                        En tu primer pedido de torta personalizada
+                    </p>
+                    <p style="margin-top: 2rem; font-size: 1.2rem;">
+                        Menciona este sitio web al hacer tu pedido
+                    </p>
+                </div>
+            </div>
+
+            <!-- Grid de Promociones -->
+            <div class="promos-grid">
+                <div class="promo-card">
+                    <div class="promo-header">
+                        <h4>🎂 COMBO CUMPLEAÑOS</h4>
+                    </div>
+                    <div class="promo-content">
+                        <p>Torta mediana + 12 cupcakes</p>
+                        <p class="promo-price">$95.000</p>
+                        <p style="font-weight: bold;">Ahorra $15.000</p>
+                        <a href="reservas.html" class="btn-primary">Reservar Ahora</a>
+                    </div>
+                </div>
+
+                <div class="promo-card">
+                    <div class="promo-header">
+                        <h4>☕ DESAYUNO DULCE</h4>
+                    </div>
+                    <div class="promo-content">
+                        <p>6 croissants + 6 postres individuales</p>
+                        <p class="promo-price">$42.000</p>
+                        <p style="font-weight: bold;">Precio especial</p>
+                        <a href="reservas.html" class="btn-primary">Ordenar</a>
+                    </div>
+                </div>
+
+                <div class="promo-card">
+                    <div class="promo-header">
+                        <h4>💍 BODAS Y EVENTOS</h4>
+                    </div>
+                    <div class="promo-content">
+                        <p>Descuentos especiales en pedidos para más de 50 personas</p>
+                        <p class="promo-price">HASTA 20% OFF</p>
+                        <p style="font-weight: bold;">Consulta disponibilidad</p>
+                        <a href="contacto.html" class="btn-primary">Consultar</a>
+                    </div>
+                </div>
+
+                <div class="promo-card">
+                    <div class="promo-header">
+                        <h4>🎓 CLIENTE FRECUENTE</h4>
+                    </div>
+                    <div class="promo-content">
+                        <p>Por cada 5 compras</p>
+                        <p class="promo-price">10% OFF</p>
+                        <p style="font-weight: bold;">En tu siguiente pedido</p>
+                        <a href="contacto.html" class="btn-primary">Más Info</a>
+                    </div>
+                </div>
+
+                <div class="promo-card">
+                    <div class="promo-header">
+                        <h4>🍰 MARTES DULCE</h4>
+                    </div>
+                    <div class="promo-content">
+                        <p>Todos los martes</p>
+                        <p class="promo-price">2x1</p>
+                        <p style="font-weight: bold;">En postres del día</p>
+                        <a href="menu.html" class="btn-primary">Ver Menú</a>
+                    </div>
+                </div>
+
+                <div class="promo-card">
+                    <div class="promo-header">
+                        <h4>📦 PEDIDOS GRANDES</h4>
+                    </div>
+                    <div class="promo-content">
+                        <p>Compras superiores a $200.000</p>
+                        <p class="promo-price">ENVÍO GRATIS</p>
+                        <p style="font-weight: bold;">En toda la ciudad</p>
+                        <a href="catalogo.html" class="btn-primary">Ver Catálogo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Términos y Condiciones -->
+            <div class="terms">
+                <h3>TÉRMINOS Y CONDICIONES</h3>
+                <p>
+                    *Promociones válidas por tiempo limitado. No acumulables con otras ofertas. Consulta términos y condiciones específicos de cada promoción. Los descuentos aplican sobre precios regulares. Sujeto a disponibilidad de productos.
+                </p>
+                <p style="margin-top: 1rem;">
+                    Para más información sobre nuestras promociones, contáctanos al 313 440 3692 o visita nuestra tienda.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 DULCE ARTESANO - TODOS LOS DERECHOS RESERVADOS</p>
+        <p style="margin-top: 1rem;">BRAYAN JECID VARGAS CALDERÓN & JHON ANTHONY ROA PARADA</p>
+    </footer>
+</body>
+</html>

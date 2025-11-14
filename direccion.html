@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dirección - Dulce Artesano</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <style>
+                body {
+            background: #f9f9f9;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #222;
+        }
+
+        /* --- ENCABEZADO --- */
+        .logo-header {
+            text-align: center;
+            padding: 1.5rem 0;
+            background: #fff;
+        }
+
+        .logo-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin: 0;
+        }
+
+        .logo-header p {
+            font-size: 1rem;
+            color: #555;
+            margin-top: 0.3rem;
+        }
+
+        /* --- MENÚ --- */
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .btn-nav {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 2px;
+            padding: 0.8rem 1.5rem;
+            text-transform: uppercase;
+            border-radius: 50px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .btn-nav:hover {
+            background: #fff;
+            color: #000;
+            border-color: #000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .btn-home {
+            background: #fff;
+            color: #000;
+            border: 2px solid #fff;
+        }
+
+        .btn-home:hover {
+            background: transparent;
+            color: #fff;
+            border-color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn-nav {
+                width: 80%;
+                text-align: center;
+            }
+        }
+
+        /* --- HERO PRINCIPAL --- */
+        .contact-hero {
+            background: #000;
+            color: #fff;
+            padding: 5rem 2rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            background-image: linear-gradient(135deg, #000 60%, #222);
+        }
+
+        .contact-hero h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .contact-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* --- TARJETAS DE CONTACTO --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            padding: 0 5%;
+        }
+
+        .contact-card {
+            background: #fff;
+            border: 4px solid #000;
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            border-radius: 15px;
+        }
+
+        .contact-card:hover {
+            background: #000;
+            color: #fff;
+            transform: translateY(-10px);
+        }
+
+        .contact-card-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-card h3 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card:hover a {
+            color: #fff;
+        }
+
+        .contact-card p {
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+            line-height: 1.6;
+        }
+
+        /* --- HORARIOS --- */
+        .schedule-section {
+            background: #fff;
+            border: 4px solid #000;
+            border-radius: 15px;
+            padding: 3rem;
+            text-align: center;
+            margin: 5rem auto;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .schedule-section h3 {
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .schedule-section p {
+            font-size: 1.1rem;
+            margin: 0.7rem 0;
+        }
+        /* ============================================
+           ESTILOS DE SECCIÓN - DIRECCIÓN
+           ============================================ */
+
+        .direccion-hero {
+            background: #fff;
+            color: #000;
+            padding: 5rem 2rem;
+            text-align: center;
+            margin-bottom: 5rem;
+            border: 5px solid #000;
+            border-radius: 15px;
+            transition: all 0.4s ease;
+        }
+
+        .direccion-hero:hover {
+            background: #000;
+            color: #fff;
+            transform: translateY(-10px);
+        }
+
+        .direccion-icon {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .direccion-hero h2 {
+            font-size: 3.2rem;
+            font-weight: 900;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* ============================================
+           TARJETA PRINCIPAL DE DIRECCIÓN
+           ============================================ */
+
+        .address-card {
+            background: #000;
+            color: #fff;
+            padding: 4rem 3rem;
+            text-align: center;
+            margin-bottom: 5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .address-card h3 {
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .address-info {
+            font-size: 1.7rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .address-detail {
+            font-size: 1.2rem;
+            margin: 1rem 0;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        /* ============================================
+           MAPA DE UBICACIÓN
+           ============================================ */
+
+        .map-container {
+            background: #fff;
+            border: 5px solid #000;
+            padding: 2rem;
+            margin-bottom: 5rem;
+            border-radius: 15px;
+            transition: all 0.4s ease;
+        }
+
+        .map-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        .map-container h3 {
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .map-frame {
+            width: 100%;
+            height: 500px;
+            border: 3px solid #000;
+            border-radius: 10px;
+        }
+
+        /* ============================================
+           CÓMO LLEGAR - GRID DE TARJETAS
+           ============================================ */
+
+        .directions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 5rem;
+        }
+
+        .direction-card {
+            background: #fff;
+            border: 3px solid #000;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 15px;
+            transition: all 0.4s ease;
+        }
+
+        .direction-card:hover {
+            background: #000;
+            color: #fff;
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .direction-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .direction-card h4 {
+            font-size: 1.3rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .direction-card p {
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* ============================================
+           HORARIOS
+           ============================================ */
+
+        .horario-card {
+            background: #000;
+            color: #fff;
+            padding: 3.5rem;
+            text-align: center;
+            margin-top: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .horario-card h3 {
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .horario-card p {
+            font-size: 1.2rem;
+            line-height: 2;
+        }
+
+        .horario-card strong {
+            color: #fff;
+        }
+
+        .horario-card em {
+            display: block;
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+
+        @media (max-width: 768px) {
+            .direccion-hero h2 {
+                font-size: 2rem;
+                letter-spacing: 4px;
+            }
+
+            .address-info {
+                font-size: 1.3rem;
+            }
+
+            .address-detail {
+                font-size: 1.05rem;
+            }
+
+            .map-frame {
+                height: 350px;
+            }
+
+            .directions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .horario-card {
+                padding: 2.5rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header-fixed">
+        <div class="logo-header">
+            <h1>DULCE ARTESANO</h1>
+            <p>Pastelería & Panadería</p>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="btn-nav btn-home">Inicio</a>
+            <a href="menu.html" class="btn-nav">Menú</a>
+            <a href="contacto.html" class="btn-nav">Contacto</a>
+            <a href="reservas.html" class="btn-nav">Reservas</a>
+        </nav>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <div class="container">
+
+            <!-- Hero Dirección -->
+            <div class="direccion-hero">
+                <div class="direccion-icon">📍</div>
+                <h2>Nuestra Ubicación</h2>
+            </div>
+
+            <!-- Tarjeta de Dirección -->
+            <div class="address-card">
+                <h3>Encuéntranos Aquí</h3>
+                <p class="address-info">Calle 22 #6a-09 Yariguies II</p>
+                <p class="address-detail">San Vicente de Chucurí, Santander, Colombia</p>
+                <p class="address-detail" style="margin-top: 2rem;">
+                    📞 Tel: <strong>+57 313 440 3692</strong>
+                </p>
+            </div>
+
+            <!-- Mapa -->
+            <div class="map-container">
+                <h3>Mapa de Ubicación</h3>
+                <iframe 
+                    class="map-frame"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.036774336388!2d-73.41755192584502!3d6.88619869311277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6829f04b548a4b%3A0xb940cc664471ee!2sDulce%20Artesano!5e0!3m2!1ses-419!2sco!4v1763068492900!5m2!1ses-419!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+            <!-- Cómo llegar -->
+            <h3 class="page-title" style="margin-bottom: 3rem;"></h3>
+
+            <div class="directions-grid">
+                <div class="direction-card">
+                    <div class="direction-icon">🚗</div>
+                    <h4>En Automóvil</h4>
+                    <p>Desde el centro de San Vicente, toma la vía hacia Yariguies II. Estamos ubicados en la Calle 22, fácil acceso con parqueadero disponible.</p>
+                </div>
+
+                <div class="direction-card">
+                    <div class="direction-icon">🚌</div>
+                    <h4>En Transporte Público</h4>
+                    <p>Toma cualquier bus que se dirija a Yariguies II. Baja en la parada de la Calle 22. Estamos a 2 minutos caminando.</p>
+                </div>
+
+                <div class="direction-card">
+                    <div class="direction-icon">🚶</div>
+                    <h4>Referencias</h4>
+                    <p>Cerca del parque principal de Yariguies II. Frente a la tienda de abarrotes. Edificio claro con el letrero de Dulce Artesano.</p>
+                </div>
+            </div>
+
+            <!-- Horarios -->
+            <div class="horario-card">
+                <h3>Horario de Atención</h3>
+                <p>
+                    <strong>Lunes a Viernes:</strong> 8:00 AM - 7:00 PM<br>
+                    <strong>Sábados:</strong> 9:00 AM - 5:00 PM<br>
+                    <strong>Domingos:</strong> Solo entregas programadas
+                </p>
+                <em>Te esperamos con el mejor servicio y los productos más deliciosos</em>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 DULCE ARTESANO - TODOS LOS DERECHOS RESERVADOS</p>
+        <p style="margin-top: 1rem;">Brayan Jecid Vargas Calderón & Jhon Anthony Roa Parada</p>
+    </footer>
+</body>
+</html>

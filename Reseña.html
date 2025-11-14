@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reseña Histórica - Dulce Artesano</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <style>
+
+        body {
+            background: #f9f9f9;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #222;
+        }
+
+        /* --- ENCABEZADO --- */
+        .logo-header {
+            text-align: center;
+            padding: 1.5rem 0;
+            background: #fff;
+        }
+
+        .logo-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin: 0;
+        }
+
+        .logo-header p {
+            font-size: 1rem;
+            color: #555;
+            margin-top: 0.3rem;
+        }
+
+        /* --- MENÚ --- */
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .btn-nav {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 2px;
+            padding: 0.8rem 1.5rem;
+            text-transform: uppercase;
+            border-radius: 50px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .btn-nav:hover {
+            background: #fff;
+            color: #000;
+            border-color: #000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .btn-home {
+            background: #fff;
+            color: #000;
+            border: 2px solid #fff;
+        }
+
+        .btn-home:hover {
+            background: transparent;
+            color: #fff;
+            border-color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn-nav {
+                width: 80%;
+                text-align: center;
+            }
+        }
+
+        /* --- HERO PRINCIPAL --- */
+        .contact-hero {
+            background: #000;
+            color: #fff;
+            padding: 5rem 2rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            background-image: linear-gradient(135deg, #000 60%, #222);
+        }
+
+        .contact-hero h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .contact-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* --- TARJETAS DE CONTACTO --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            padding: 0 5%;
+        }
+
+        .contact-card {
+            background: #fff;
+            border: 4px solid #000;
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            border-radius: 15px;
+        }
+
+        .contact-card:hover {
+            background: #000;
+            color: #fff;
+            transform: translateY(-10px);
+        }
+
+        .contact-card-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-card h3 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card:hover a {
+            color: #fff;
+        }
+
+        .contact-card p {
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+            line-height: 1.6;
+        }
+
+        /* --- HORARIOS --- */
+        .schedule-section {
+            background: #fff;
+            border: 4px solid #000;
+            border-radius: 15px;
+            padding: 3rem;
+            text-align: center;
+            margin: 5rem auto;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .schedule-section h3 {
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .schedule-section p {
+            font-size: 1.1rem;
+            margin: 0.7rem 0;
+        }
+
+                body {
+            background: #f9f9f9;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #222;
+        }
+
+        /* --- ENCABEZADO --- */
+        .logo-header {
+            text-align: center;
+            padding: 1.5rem 0;
+            background: #fff;
+        }
+
+        .logo-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin: 0;
+        }
+
+        .logo-header p {
+            font-size: 1rem;
+            color: #555;
+            margin-top: 0.3rem;
+        }
+
+        /* --- MENÚ --- */
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .btn-nav {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 2px;
+            padding: 0.8rem 1.5rem;
+            text-transform: uppercase;
+            border-radius: 50px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .btn-nav:hover {
+            background: #fff;
+            color: #000;
+            border-color: #000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .btn-home {
+            background: #fff;
+            color: #000;
+            border: 2px solid #fff;
+        }
+
+        .btn-home:hover {
+            background: transparent;
+            color: #fff;
+            border-color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn-nav {
+                width: 80%;
+                text-align: center;
+            }
+        }
+
+
+        /* --- HORARIOS --- */
+        .schedule-section {
+            background: #fff;
+            border: 4px solid #000;
+            border-radius: 15px;
+            padding: 3rem;
+            text-align: center;
+            margin: 5rem auto;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .schedule-section h3 {
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .schedule-section p {
+            font-size: 1.1rem;
+            margin: 0.7rem 0;
+        }
+        .historia-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .historia-hero {
+            background: #000;
+            color: #fff;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .historia-hero h2 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+        }
+
+        .historia-icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 3rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #000;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: #fff;
+            border: 3px solid #000;
+            padding: 2.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            background: #000;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        .timeline-year {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #000;
+            color: #fff;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 900;
+            border: 5px solid #fff;
+            box-shadow: 0 0 0 3px #000;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content p {
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .historia-text {
+            background: #fff;
+            border: 3px solid #000;
+            padding: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .historia-text p {
+            font-size: 1.15rem;
+            line-height: 2;
+            text-align: justify;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                flex-direction: column !important;
+                padding-left: 80px;
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
+
+            .timeline-year {
+                left: 30px;
+            }
+
+            .historia-hero h2 {
+                font-size: 2rem;
+                letter-spacing: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header-fixed">
+        <div class="logo-header">
+            <h1>DULCE ARTESANO</h1>
+            <p>Pastelería & Panadería</p>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="btn-nav btn-home">INICIO</a>
+            <a href="vision.html" class="btn-nav">VISIÓN</a>
+            <a href="mision.html" class="btn-nav">MISIÓN</a>
+            <a href="catalogo.html" class="btn-nav">CATÁLOGO</a>
+        </nav>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <div class="container">
+            <div class="historia-container">
+                <div class="historia-hero">
+                    <div class="historia-icon"></div>
+                    <h2>RESEÑA HISTÓRICA</h2>
+                </div>
+
+                <div class="historia-text">
+                    <p>
+                        <strong>Dulce Artesano</strong> nació del sueño de una familia apasionada por la repostería tradicional. Todo comenzó en una pequeña cocina casera, donde nuestros fundadores experimentaban con recetas heredadas de generación en generación, añadiendo su toque especial y creativo.
+                    </p>
+                    <p>
+                        Con el paso del tiempo, el amor por el arte de la repostería y el apoyo incondicional de nuestros primeros clientes nos motivó a expandir nuestro negocio. Hoy en día, mantenemos vivo ese espíritu artesanal que nos vio nacer, combinando la tradición con la innovación para ofrecer productos únicos que endulzan la vida de nuestros clientes.
+                    </p>
+                    <p>
+                        Cada pastel, cada galleta y cada postre que sale de nuestro horno lleva consigo no solo ingredientes de primera calidad, sino también años de experiencia, dedicación y el amor de un equipo comprometido con la excelencia. Nuestro compromiso es seguir creciendo mientras mantenemos la esencia artesanal que nos define.
+                    </p>
+                </div>
+
+                <h3 style="font-size: 2.5rem; font-weight: 900; letter-spacing: 6px; text-transform: uppercase; text-align: center; margin: 4rem 0;">
+                    LÍNEA DEL TIEMPO
+                </h3>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2020</div>
+                        <div class="timeline-content">
+                            <h3>EL COMIENZO</h3>
+                            <p>Nace la idea de crear una pastelería artesanal en una cocina familiar. Primeras recetas y experimentos con amigos y familiares.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-year">2021</div>
+                        <div class="timeline-content">
+                            <h3>PRIMEROS CLIENTES</h3>
+                            <p>Apertura oficial con pedidos personalizados. La calidad de nuestros productos comienza a destacar en la región.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-year">2022</div>
+                        <div class="timeline-content">
+                            <h3>EXPANSIÓN</h3>
+                            <p>Ampliación del catálogo de productos. Incorporación de nuevas recetas y diseños innovadores que conquistan paladares.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-year">2023</div>
+                        <div class="timeline-content">
+                            <h3>RECONOCIMIENTO</h3>
+                            <p>La marca se consolida como referente en repostería artesanal. Participación en eventos gastronómicos importantes.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-year">2024</div>
+                        <div class="timeline-content">
+                            <h3>CRECIMIENTO</h3>
+                            <p>Apertura de nuevo punto de venta. Ampliación del equipo de trabajo con maestros pasteleros especializados.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-year">2025</div>
+                        <div class="timeline-content">
+                            <h3>PRESENTE</h3>
+                            <p>Dulce Artesano se posiciona como líder regional en repostería artesanal, manteniendo la calidad y tradición que nos caracteriza.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>©️ Colegio Integrado Camilo Torres. Todos los derechos reservados. – 2025</p>
+        <p style="margin-top: 1rem;">BRAYAN JECID VARGAS CALDERÓN & JHON ANTHONY ROA PARADA</p>
+    </footer>
+</body>
+</html>

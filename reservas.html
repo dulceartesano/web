@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas - Dulce Artesano</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <style>
+
+                      body {
+            background: #f9f9f9;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #222;
+        }
+
+        /* --- ENCABEZADO --- */
+        .logo-header {
+            text-align: center;
+            padding: 1.5rem 0;
+            background: #fff;
+        }
+
+        .logo-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin: 0;
+        }
+
+        .logo-header p {
+            font-size: 1rem;
+            color: #555;
+            margin-top: 0.3rem;
+        }
+
+        /* --- MENÚ --- */
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .btn-nav {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 2px;
+            padding: 0.8rem 1.5rem;
+            text-transform: uppercase;
+            border-radius: 50px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .btn-nav:hover {
+            background: #fff;
+            color: #000;
+            border-color: #000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .btn-home {
+            background: #fff;
+            color: #000;
+            border: 2px solid #fff;
+        }
+
+        .btn-home:hover {
+            background: transparent;
+            color: #fff;
+            border-color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn-nav {
+                width: 80%;
+                text-align: center;
+            }
+        }
+
+        .reservas-hero {
+            background: #000;
+            color: #fff;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .reservas-hero h2 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+        }
+
+        .reservas-icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            border: 5px solid #000;
+            padding: 4rem;
+        }
+
+        .form-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 1rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1.2rem;
+            border: 3px solid #000;
+            font-size: 1rem;
+            font-family: inherit;
+            background: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            background: #000;
+            color: #fff;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.5rem;
+            background: #000;
+            color: #fff;
+            border: 3px solid #000;
+            font-size: 1.2rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: #fff;
+            color: #000;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .info-section {
+            background: #f5f5f5;
+            border: 3px solid #000;
+            padding: 3rem;
+            margin-top: 4rem;
+        }
+
+        .info-section h3 {
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .info-item {
+            text-align: center;
+            padding: 2rem;
+            background: #fff;
+            border: 2px solid #000;
+        }
+
+        .info-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-item h4 {
+            font-size: 1.2rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .reservas-hero h2 {
+                font-size: 2rem;
+                letter-spacing: 4px;
+            }
+
+            .form-container {
+                padding: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header-fixed">
+        <div class="logo-header">
+            <h1>DULCE ARTESANO</h1>
+            <p>Pastelería & Panadería</p>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="btn-nav btn-home">INICIO</a>
+            <a href="menu.html" class="btn-nav">MENÚ</a>
+            <a href="catalogo.html" class="btn-nav">CATÁLOGO</a>
+            <a href="contacto.html" class="btn-nav">CONTACTO</a>
+        </nav>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <div class="container">
+            <div class="reservas-hero">
+                <div class="reservas-icon"></div>
+                <h2>HAZ TU RESERVA</h2>
+            </div>
+
+            <div class="form-container">
+                <h3 class="form-title">FORMULARIO DE PEDIDO</h3>
+                
+                <form id="reservaForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombre">NOMBRE COMPLETO *</label>
+                            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefono">TELÉFONO *</label>
+                            <input type="tel" id="telefono" name="telefono" required placeholder="313 440 3692">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">CORREO ELECTRÓNICO *</label>
+                        <input type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fecha">FECHA DE ENTREGA *</label>
+                            <input type="date" id="fecha" name="fecha" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora">HORA DE ENTREGA *</label>
+                            <input type="time" id="hora" name="hora" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="producto">TIPO DE PRODUCTO *</label>
+                        <select id="producto" name="producto" required>
+                            <option value="">Selecciona un producto</option>
+                            <option value="torta">Torta Personalizada</option>
+                            <option value="cupcakes">Cupcakes</option>
+                            <option value="galletas">Galletas Decoradas</option>
+                            <option value="postres">Postres Tradicionales</option>
+                            <option value="mesa-dulce">Mesa Dulce</option>
+                            <option value="brunch">Brunch/Salados</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="personas">NÚMERO DE PERSONAS</label>
+                        <input type="number" id="personas" name="personas" placeholder="¿Para cuántas personas?" min="1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="detalles">DETALLES DEL PEDIDO *</label>
+                        <textarea id="detalles" name="detalles" required placeholder="Describe tu pedido: sabores, diseño, colores, tema, alergias, etc."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="entrega">TIPO DE ENTREGA *</label>
+                        <select id="entrega" name="entrega" required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="recoger">Recoger en tienda</option>
+                            <option value="domicilio">Entrega a domicilio</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="direccion">DIRECCIÓN (si es entrega a domicilio)</label>
+                        <input type="text" id="direccion" name="direccion" placeholder="Tu dirección completa">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comentarios">COMENTARIOS ADICIONALES</label>
+                        <textarea id="comentarios" name="comentarios" placeholder="¿Algo más que debamos saber?"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">ENVIAR PEDIDO</button>
+                </form>
+            </div>
+
+            <div class="info-section">
+                <h3>INFORMACIÓN IMPORTANTE</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-icon">⏰</div>
+                        <h4>TIEMPO DE ANTICIPACIÓN</h4>
+                        <p>Pedidos con mínimo 48 horas de anticipación</p>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">💳</div>
+                        <h4>FORMA DE PAGO</h4>
+                        <p>Efectivo, transferencia o tarjeta. 50% anticipo para reservar</p>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">✅</div>
+                        <h4>CONFIRMACIÓN</h4>
+                        <p>Te contactaremos en 24 horas para confirmar tu pedido</p>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">📞</div>
+                        <h4>DUDAS</h4>
+                        <p>Llámanos al 313 440 3692 para más información</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 DULCE ARTESANO - TODOS LOS DERECHOS RESERVADOS</p>
+        <p style="margin-top: 1rem;">BRAYAN JECID VARGAS CALDERÓN & JHON ANTHONY ROA PARADA</p>
+    </footer>
+
+    <script>
+        document.getElementById('reservaForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Gracias por tu pedido! Te contactaremos pronto para confirmar los detalles.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

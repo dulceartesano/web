@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulce Artesano - Pastelería Artesanal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', 'Helvetica Neue', sans-serif;
+            background: #fff;
+            color: #000;
+            line-height: 1.6;
+        }
+
+        /* Header Minimalista */
+        .header-container {
+            background: #000;
+            color: #fff;
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+        }
+
+        .logo-section {
+            text-align: center;
+            padding: 1.5rem 2rem;
+        }
+
+        .logo-section h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+        }
+
+        .tagline {
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
+
+        /* Navegación Minimalista */
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0;
+            margin-top: 2rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .nav-item {
+            background: #fff;
+            border: 1px solid #000;
+            padding: 3rem 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+        }
+
+        .nav-item:hover {
+            background: #000;
+            color: #fff;
+            transform: scale(1.02);
+        }
+
+        .nav-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .nav-item h3 {
+            font-size: 1.2rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-item p {
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            opacity: 0.7;
+        }
+
+        /* Hero Section */
+        .hero-main {
+            margin-top: 150px;
+            height: 70vh;
+            background: #000;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-main::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 49%, #fff 49%, #fff 51%, transparent 51%);
+            background-size: 20px 20px;
+            opacity: 0.03;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero-content h2 {
+            font-size: 4rem;
+            font-weight: 900;
+            letter-spacing: 10px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: #fff;
+            color: #000;
+            text-decoration: none;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: 2px solid #fff;
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: #fff;
+        }
+
+        /* Main Content */
+        .main-container {
+            max-width: 1400px;
+            margin: 4rem auto;
+            padding: 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        /* Footer Minimalista */
+        .footer {
+            background: #000;
+            color: #fff;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer p {
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .logo-section h1 {
+                font-size: 1.8rem;
+                letter-spacing: 4px;
+            }
+
+            .hero-content h2 {
+                font-size: 2.5rem;
+                letter-spacing: 5px;
+            }
+
+            .nav-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-item {
+                min-height: 150px;
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header-container">
+        <div class="logo-section">
+            <h1>DULCE ARTESANO</h1>
+            <p class="tagline">Pastelería & Panadería</p>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-main">
+        <div class="hero-content">
+            <h2>ARTESANAL</h2>
+            <p>Donde cada bocado es una obra de arte</p>
+            <a href="catalogo.html" class="btn-primary">Explorar Menú</a>
+        </div>
+    </section>
+
+    <!-- Navegación Principal -->
+    <div class="main-container">
+        <h2 class="section-title">Descubre</h2>
+        
+        <div class="nav-grid">
+            <a href="vision.html" class="nav-item">
+                <span class="nav-icon">👁️</span>
+                <h3>Visión</h3>
+                <p>Nuestro futuro</p>
+            </a>
+
+            <a href="mision.html" class="nav-item">
+                <span class="nav-icon">🎯</span>
+                <h3>Misión</h3>
+                <p>Nuestro propósito</p>
+            </a>
+
+            <a href="/reseña.html" class="nav-item">
+                <span class="nav-icon">📖</span>
+                <h3>Reseña</h3>
+                <p>Nuestra historia</p>
+            </a>
+
+            <a href="menu.html" class="nav-item">
+                <span class="nav-icon">🍰</span>
+                <h3>Menú</h3>
+                <p>Nuestros platos</p>
+            </a>
+
+            <a href="catalogo.html" class="nav-item">
+                <span class="nav-icon">💰</span>
+                <h3>Catálogo</h3>
+                <p>Precios</p>
+            </a>
+
+            <a href="propietarios.html" class="nav-item">
+                <span class="nav-icon">👥</span>
+                <h3>Propietarios</h3>
+                <p>Nuestro equipo</p>
+            </a>
+
+            <a href="objetivos.html" class="nav-item">
+                <span class="nav-icon">🎯</span>
+                <h3>Objetivos</h3>
+                <p>Nuestras metas</p>
+            </a>
+
+            <a href="promociones.html" class="nav-item">
+                <span class="nav-icon">🎁</span>
+                <h3>Promociones</h3>
+                <p>Ofertas especiales</p>
+            </a>
+
+            <a href="contacto.html" class="nav-item">
+                <span class="nav-icon">📞</span>
+                <h3>Contacto</h3>
+                <p>Comunícate</p>
+            </a>
+
+            <a href="direccion.html" class="nav-item">
+                <span class="nav-icon">📍</span>
+                <h3>Dirección</h3>
+                <p>Encuéntranos</p>
+            </a>
+
+            <a href="reservas.html" class="nav-item">
+                <span class="nav-icon">📅</span>
+                <h3>Reservas</h3>
+                <p>Haz tu pedido</p>
+            </a>
+
+            <a href="disenadores.html" class="nav-item">
+                <span class="nav-icon">💻</span>
+                <h3>Diseñadores</h3>
+                <p>Créditos</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 DULCE ARTESANO - TODOS LOS DERECHOS RESERVADOS</p>
+        <p style="margin-top: 1rem;">BRAYAN JECID VARGAS CALDERÓN & JOHN ANTONI ROA PARADA</p>
+    </footer>
+</body>
+</html>

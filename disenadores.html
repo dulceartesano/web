@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseñadores - Dulce Artesano</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <style>
+              body {
+            background: #f9f9f9;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #222;
+        }
+
+        /* --- ENCABEZADO --- */
+        .logo-header {
+            text-align: center;
+            padding: 1.5rem 0;
+            background: #fff;
+        }
+
+        .logo-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin: 0;
+        }
+
+        .logo-header p {
+            font-size: 1rem;
+            color: #555;
+            margin-top: 0.3rem;
+        }
+
+        /* --- MENÚ --- */
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .btn-nav {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 2px;
+            padding: 0.8rem 1.5rem;
+            text-transform: uppercase;
+            border-radius: 50px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .btn-nav:hover {
+            background: #fff;
+            color: #000;
+            border-color: #000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .btn-home {
+            background: #fff;
+            color: #000;
+            border: 2px solid #fff;
+        }
+
+        .btn-home:hover {
+            background: transparent;
+            color: #fff;
+            border-color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn-nav {
+                width: 80%;
+                text-align: center;
+            }
+        }
+
+        /* --- HERO PRINCIPAL --- */
+        .contact-hero {
+            background: #000;
+            color: #fff;
+            padding: 5rem 2rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            background-image: linear-gradient(135deg, #000 60%, #222);
+        }
+
+        .contact-hero h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .contact-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* --- TARJETAS DE CONTACTO --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            padding: 0 5%;
+        }
+
+        .contact-card {
+            background: #fff;
+            border: 4px solid #000;
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            border-radius: 15px;
+        }
+
+        .contact-card:hover {
+            background: #000;
+            color: #fff;
+            transform: translateY(-10px);
+        }
+
+        .contact-card-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-card h3 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card:hover a {
+            color: #fff;
+        }
+
+        .contact-card p {
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+            line-height: 1.6;
+        }
+
+                .vision-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .vision-hero {
+            background: #000;
+            color: #fff;
+            padding: 6rem 3rem;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .vision-hero h2 {
+            font-size: 4rem;
+            font-weight: 900;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        /* --- HORARIOS --- */
+        .schedule-section {
+            background: #fff;
+            border: 4px solid #000;
+            border-radius: 15px;
+            padding: 3rem;
+            text-align: center;
+            margin: 5rem auto;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .schedule-section h3 {
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .schedule-section p {
+            font-size: 1.1rem;
+            margin: 0.7rem 0;
+        }
+
+
+        /* ============================================
+           TARJETAS DE DISEÑADORES
+           ============================================ */
+
+        .designers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .designer-card {
+            background: #000;
+            color: #fff;
+            border: 5px solid #000;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .designer-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .designer-header {
+            background: #fff;
+            color: #000;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .designer-avatar {
+            font-size: 6rem;
+            margin-bottom: 1rem;
+        }
+
+        .designer-header h3 {
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+
+        .designer-role {
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
+            opacity: 0.8;
+        }
+
+        .designer-content {
+            padding: 3rem;
+        }
+
+        .designer-content h4 {
+            font-size: 1.4rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .designer-content p {
+            font-size: 1.05rem;
+            line-height: 2;
+            margin-bottom: 1.5rem;
+        }
+
+        /* ============================================
+           HABILIDADES
+           ============================================ */
+
+        .skills-section {
+            margin-top: 2rem;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: #fff;
+            color: #000;
+            padding: 0.8rem 1.5rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        /* ============================================
+           INFORMACIÓN DEL PROYECTO
+           ============================================ */
+
+        .project-info {
+            background: #000;
+            color: #fff;
+            padding: 5rem 3rem;
+            text-align: center;
+            margin-top: 5rem;
+            border: 5px solid #000;
+            border-radius: 15px;
+        }
+
+        .project-info h3 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .project-info p {
+            font-size: 1.2rem;
+            line-height: 2;
+            max-width: 900px;
+            margin: 0 auto 1.5rem;
+        }
+
+        /* ============================================
+           TECNOLOGÍAS UTILIZADAS
+           ============================================ */
+
+        .tech-stack {
+            background: #fff;
+            color: #000;
+            padding: 3rem;
+            margin-top: 3rem;
+            border-radius: 15px;
+        }
+
+        .tech-stack h4 {
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .tech-item {
+            background: #000;
+            color: #fff;
+            padding: 1.2rem;
+            text-align: center;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            background: #fff;
+            color: #000;
+            border: 2px solid #000;
+        }
+
+        /* ============================================
+           SECCIÓN DE AGRADECIMIENTOS
+           ============================================ */
+
+        .thankyou-section {
+            background: #fff;
+            border: 5px solid #000;
+            padding: 4rem 3rem;
+            text-align: center;
+            margin-top: 4rem;
+            border-radius: 15px;
+        }
+
+        .thankyou-section h3 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .thankyou-section p {
+            font-size: 1.15rem;
+            line-height: 2;
+            max-width: 900px;
+            margin: 0 auto 2rem;
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+
+        @media (max-width: 768px) {
+            .disenadores-hero h2 {
+                font-size: 2rem;
+                letter-spacing: 4px;
+            }
+
+            .designers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .designer-header h3 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header --> 
+    <div class="header-fixed">
+ <div class="logo-header" style="text-align:center; padding:1.5rem 0; background:#fff;">
+            <h1 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color:#000; margin:0;">DULCE ARTESANO</h1>
+            <p style="font-size:1rem; color:#555; margin-top:0.3rem;">Pastelería & Panadería</p>
+        </div>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="btn-nav btn-home">Inicio</a>
+            <a href="vision.html" class="btn-nav">Visión</a>
+            <a href="mision.html" class="btn-nav">Misión</a>
+            <a href="propietarios.html" class="btn-nav">Propietarios</a>
+        </nav>
+    </div>
+    <br><br>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <div class="container">
+            <!-- Hero -->
+            <div class="disenadores-hero">
+                <div class="disenadores-icon"></div>
+               
+            </div>
+
+            <!-- Tarjetas -->
+            <div class="designers-grid">
+                <!-- Diseñador 1 -->
+                <div class="designer-card">
+                    <div class="designer-header">
+                        <div class="designer-avatar" ></div><img src="mulo.jfif" alt="Brayan" width="300">
+                        <h3>Brayan Jecid Vargas Calderón</h3>
+                        <p class="designer-role">Desarrollador Web & Diseñador</p>
+                    </div>
+                    <div class="designer-content">
+                        <h4>Sobre Mí</h4>
+                        <p>
+                            Estudiante de Técnico Informático con pasión por el desarrollo web y el diseño de interfaces. Responsable de la estructura, programación y funcionalidad completa del sitio web.
+                        </p>
+                        <p>
+                            Enfocado en crear experiencias digitales modernas, minimalistas y funcionales que fusionan estética con rendimiento.
+                        </p>
+
+                        <div class="skills-section">
+                            <h4>Habilidades</h4>
+                            <div class="skills-list">
+                                <span class="skill-tag">HTML5</span>
+                                <span class="skill-tag">CSS</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">Diseño Web</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Diseñador 2 -->
+                <div class="designer-card">
+                    <div class="designer-header">
+                        <div class="designer-avatar"></div>  <img src="Mono.jfif" alt="MONO" width="300">
+                        <h3>Jhon Anthony Roa Parada</h3>
+                        <p class="designer-role">Desarrollador & Gestor de Contenido</p>
+                    </div>
+                    <div class="designer-content">
+                        <h4>Sobre Mí</h4>
+                        <p>
+                            Estudiante de Técnico Informático especializado en gestión de contenido, estructura de información y optimización de experiencia del usuario.
+                        </p>
+                        <p>
+                            Responsable de la organización, redacción y presentación visual de la información, garantizando una navegación clara y atractiva.
+                        </p>
+
+                        <div class="skills-section">
+                            <h4>Habilidades</h4>
+                            <div class="skills-list">
+                                <span class="skill-tag">Contenido</span>
+                                <span class="skill-tag">Redacción</span>
+                                <span class="skill-tag">Estructura</span>
+                                <span class="skill-tag">Gestión</span>
+                                <span class="skill-tag">Análisis</span>
+                                <span class="skill-tag">Diseño</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proyecto Académico -->
+            <div class="project-info">
+                <h3>Proyecto Académico</h3>
+                <p>
+                   Este proyecto académico fue desarrollado como requisito para optar al título de Bachiller Técnico en Informática del Colegio Integrado Camilo Torres.
+Su elaboración forma parte del proceso de formación integral que promueve la institución, orientado al desarrollo de competencias técnicas, investigativas y éticas en el campo de la informática.
+
+<B>©️ Colegio Integrado Camilo Torres. Todos los derechos reservados. – 2025</B>
+                </p>
+                <p>
+                    Representa la culminación de años de aprendizaje en programación web, diseño y desarrollo, aplicando conocimiento técnico en un caso real.
+                </p>
+                <p style="font-weight: 900; font-size: 1.3rem; margin-top: 2rem;">Año 2025</p>
+
+                <div class="tech-stack">
+                    <h4>Tecnologías Utilizadas</h4>
+                    <div class="tech-grid">
+                        <div class="tech-item">HTML5</div>
+                        <div class="tech-item">CSS</div>
+                        <div class="tech-item">JavaScript</div>
+             
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agradecimientos -->
+            <div class="thankyou-section">
+                <h3>Agradecimientos</h3>
+                <p>
+                    Agradecemos al <strong>Colegio Integrado Camilo Torres</strong> por brindarnos la formación y guía para desarrollar este proyecto, y a todos los docentes que acompañaron nuestro proceso.
+                </p>
+                <p>
+                    Este proyecto no solo cumple un requisito académico, sino que refleja nuestra pasión por la tecnología, el diseño y la creatividad.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 DULCE ARTESANO - TODOS LOS DERECHOS RESERVADOS</p>
+        <p style="margin-top: 1rem;">Brayan Jecid Vargas Calderón & Jhon Anthony Roa Parada</p>
+    </footer>
+</body>
+</html>

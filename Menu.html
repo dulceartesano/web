@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inicio - Dulce Artesano</title>
+<style>
+    /* --- RESET BÁSICO --- */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: #121212;
+        font-family: 'Poppins', sans-serif;
+        color: #f5f5f5;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    /* --- HEADER --- */
+    .header-fixed {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: #1f1f1f;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 5%;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .logo-header h1 {
+        font-size: 2rem;
+        font-weight: 900;
+        letter-spacing: 2px;
+        color: #fff;
+    }
+
+    .logo-header p {
+        font-size: 0.9rem;
+        color: #aaa;
+        font-style: italic;
+    }
+
+    .nav-menu {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .btn-nav {
+        padding: 0.6rem 1.2rem;
+        border-radius: 50px;
+        border: 2px solid #f5f5f5;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    .btn-nav:hover {
+        background: #f5f5f5;
+        color: #121212;
+        transform: translateY(-2px);
+    }
+
+    .btn-home {
+        background: #f5f5f5;
+        color: #121212;
+    }
+
+    /* --- MAIN CONTENT --- */
+    .main-content {
+        padding: 3rem 5%;
+    }
+
+    .hero-section {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .hero-section h2 {
+        font-size: 3rem;
+        font-weight: 900;
+        letter-spacing: 4px;
+        color: #fff;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+    }
+
+    .hero-section p {
+        font-size: 1.2rem;
+        color: #ccc;
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+
+    .feature-item {
+        background: #1f1f1f;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .feature-item:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    }
+
+    .feature-image {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .feature-item:hover .feature-image {
+        transform: scale(1.05);
+    }
+
+    .feature-content {
+        padding: 1.2rem;
+    }
+
+    .feature-content h3 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 0.5rem;
+    }
+
+    .feature-content p {
+        font-size: 0.95rem;
+        color: #ccc;
+        line-height: 1.5;
+    }
+
+    /* --- FOOTER --- */
+    footer {
+        background: #1f1f1f;
+        color: #ccc;
+        text-align: center;
+        padding: 2rem 1rem;
+        margin-top: 3rem;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
+    }
+
+    footer p {
+        margin: 0.3rem 0;
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 768px) {
+        .nav-menu {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+    }
+</style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header-fixed">
+        <div class="logo-header">
+            <h1>DULCE ARTESANO</h1>
+            <p>Pastelería & Panadería</p>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="btn-nav btn-home">INICIO</a>
+            <a href="catalogo.html" class="btn-nav">CATÁLOGO</a>
+            <a href="contacto.html" class="btn-nav">CONTACTO</a>
+            <a href="reservas.html" class="btn-nav">RESERVAS</a>
+            <a href="propietarios.html" class="btn-nav">Propietarios</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="hero-section">
+            <h2>BIENVENIDO A DULCE ARTESANO</h2>
+            <p>Disfruta de nuestras delicias artesanales: tortas, cupcakes, galletas y postres tradicionales. Todo hecho con ingredientes frescos y mucho amor para cada ocasión.</p>
+        </div>
+
+        <h3 class="category-title">NUESTROS DESTACADOS</h3>
+        <div class="features-grid">
+            <div class="feature-item">
+                <img src="zTorta.jpg" alt="Tortas Personalizadas" class="feature-image">
+                <div class="feature-content">
+                    <h3>TORTAS PERSONALIZADAS</h3>
+                    <p>Diseños únicos y deliciosos para cumpleaños, bodas y cualquier evento especial.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <img src="zCupcakes.jpg" alt="Cupcakes" class="feature-image">
+                <div class="feature-content">
+                    <h3>CUPCAKES ARTESANALES</h3>
+                    <p>Esponjosos, decorados con creatividad y disponibles en múltiples sabores.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <img src="zGalletas.jpg" alt="Galletas" class="feature-image">
+                <div class="feature-content">
+                    <h3>GALLETAS DECORADAS</h3>
+                    <p>Frescas y crujientes, perfectas para regalos y celebraciones.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <img src="zVainillaArequipa.jpg" alt="Postres" class="feature-image">
+                <div class="feature-content">
+                    <h3>POSTRES TRADICIONALES</h3>
+                    <p>Flanes, tres leches y más, con nuestro toque especial que encanta a todos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 DULCE ARTESANO - TODOS LOS DERECHOS RESERVADOS</p>
+        <p>BRAYAN JECID VARGAS CALDERÓN & JHON ANTHONY ROA PARADA</p>
+    </footer>
+</body>
+</html>

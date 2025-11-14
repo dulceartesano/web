@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetivos - Dulce Artesano</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <style>
+                body {
+            background: #f9f9f9;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #222;
+        }
+
+        /* --- ENCABEZADO --- */
+        .logo-header {
+            text-align: center;
+            padding: 1.5rem 0;
+            background: #fff;
+        }
+
+        .logo-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin: 0;
+        }
+
+        .logo-header p {
+            font-size: 1rem;
+            color: #555;
+            margin-top: 0.3rem;
+        }
+
+        /* --- MENÚ --- */
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .btn-nav {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 2px;
+            padding: 0.8rem 1.5rem;
+            text-transform: uppercase;
+            border-radius: 50px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .btn-nav:hover {
+            background: #fff;
+            color: #000;
+            border-color: #000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .btn-home {
+            background: #fff;
+            color: #000;
+            border: 2px solid #fff;
+        }
+
+        .btn-home:hover {
+            background: transparent;
+            color: #fff;
+            border-color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn-nav {
+                width: 80%;
+                text-align: center;
+            }
+        }
+
+        /* --- HERO PRINCIPAL --- */
+        .contact-hero {
+            background: #000;
+            color: #fff;
+            padding: 5rem 2rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            background-image: linear-gradient(135deg, #000 60%, #222);
+        }
+
+        .contact-hero h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .contact-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* --- TARJETAS DE CONTACTO --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            padding: 0 5%;
+        }
+
+        .contact-card {
+            background: #fff;
+            border: 4px solid #000;
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            border-radius: 15px;
+        }
+
+        .contact-card:hover {
+            background: #000;
+            color: #fff;
+            transform: translateY(-10px);
+        }
+
+        .contact-card-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-card h3 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card:hover a {
+            color: #fff;
+        }
+
+        .contact-card p {
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+            line-height: 1.6;
+        }
+
+        /* --- HORARIOS --- */
+        .schedule-section {
+            background: #fff;
+            border: 4px solid #000;
+            border-radius: 15px;
+            padding: 3rem;
+            text-align: center;
+            margin: 5rem auto;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .schedule-section h3 {
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .schedule-section p {
+            font-size: 1.1rem;
+            margin: 0.7rem 0;
+        }
+        .objetivos-hero {
+            background: #000;
+            color: #fff;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .objetivos-hero h2 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+        }
+
+        .objetivos-icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+        }
+
+        .objetivos-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .objetivo-item {
+            background: #fff;
+            border-left: 8px solid #000;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .objetivo-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            transition: left 0.5s ease;
+            z-index: 0;
+        }
+
+        .objetivo-item:hover::before {
+            left: 0;
+        }
+
+        .objetivo-item:hover {
+            transform: translateX(20px);
+            border-left-width: 20px;
+        }
+
+        .objetivo-content {
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s ease;
+        }
+
+        .objetivo-item:hover .objetivo-content {
+            color: #fff;
+        }
+
+        .objetivo-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .objetivo-icon-box {
+            font-size: 3rem;
+        }
+
+        .objetivo-content h3 {
+            font-size: 1.6rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .objetivo-content p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .stat-card {
+            background: #000;
+            color: #fff;
+            padding: 3rem 2rem;
+            text-align: center;
+            border: 3px solid #000;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background: #fff;
+            color: #000;
+            transform: translateY(-10px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            .objetivos-hero h2 {
+                font-size: 2rem;
+                letter-spacing: 4px;
+            }
+
+            .objetivo-item {
+                padding: 2rem;
+            }
+
+            .stats-section {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header-fixed">
+        <div class="logo-header">
+            <h1>DULCE ARTESANO</h1>
+            <p>Pastelería & Panadería</p>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="btn-nav btn-home">INICIO</a>
+            <a href="vision.html" class="btn-nav">VISIÓN</a>
+            <a href="mision.html" class="btn-nav">MISIÓN</a>
+            <a href="propietarios.html" class="btn-nav">PROPIETARIOS</a>
+        </nav>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <div class="container">
+            <div class="objetivos-hero">
+                <div class="objetivos-icon"></div>
+                <h2>NUESTROS OBJETIVOS</h2>
+            </div>
+
+            <div class="objetivos-container">
+                <div class="objetivo-item">
+                    <div class="objetivo-content">
+                        <div class="objetivo-header">
+                            <span class="objetivo-icon-box">📈</span>
+                            <h3>CRECIMIENTO SOSTENIBLE</h3>
+                        </div>
+                        <p>
+                            Expandir nuestra presencia en el mercado regional, abriendo nuevos puntos de venta mientras mantenemos la calidad artesanal que nos caracteriza. Nuestro objetivo es crecer de manera responsable, sin comprometer los valores que nos han hecho exitosos.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="objetivo-item">
+                    <div class="objetivo-content">
+                        <div class="objetivo-header">
+                            <span class="objetivo-icon-box">⭐</span>
+                            <h3>EXCELENCIA EN CALIDAD</h3>
+                        </div>
+                        <p>
+                            Mantener los más altos estándares de calidad en todos nuestros productos, utilizando únicamente ingredientes frescos y naturales de proveedores confiables. Cada producto que sale de nuestro horno debe superar las expectativas de nuestros clientes.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="objetivo-item">
+                    <div class="objetivo-content">
+                        <div class="objetivo-header">
+                            <span class="objetivo-icon-box">💡</span>
+                            <h3>INNOVACIÓN CONSTANTE</h3>
+                        </div>
+                        <p>
+                            Desarrollar nuevas recetas y diseños que sorprendan a nuestros clientes, manteniéndonos a la vanguardia de las tendencias en repostería sin perder nuestra esencia tradicional. La innovación es clave para mantenernos relevantes y emocionantes.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="objetivo-item">
+                    <div class="objetivo-content">
+                        <div class="objetivo-header">
+                            <span class="objetivo-icon-box">😊</span>
+                            <h3>SATISFACCIÓN DEL CLIENTE</h3>
+                        </div>
+                        <p>
+                            Superar las expectativas de cada cliente, ofreciendo un servicio personalizado y productos que hagan de cada celebración un momento inolvidable. La sonrisa de satisfacción de nuestros clientes es nuestra mayor recompensa.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="objetivo-item">
+                    <div class="objetivo-content">
+                        <div class="objetivo-header">
+                            <span class="objetivo-icon-box">🌱</span>
+                            <h3>RESPONSABILIDAD SOCIAL</h3>
+                        </div>
+                        <p>
+                            Contribuir positivamente a nuestra comunidad, apoyando a productores locales y participando en iniciativas sociales que generen un impacto positivo. Creemos en el desarrollo sostenible y en retribuir a la sociedad que nos apoya.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="objetivo-item">
+                    <div class="objetivo-content">
+                        <div class="objetivo-header">
+                            <span class="objetivo-icon-box">🏆</span>
+                            <h3>LIDERAZGO EN EL SECTOR</h3>
+                        </div>
+                        <p>
+                            Consolidarnos como la marca de referencia en repostería artesanal de la región, siendo reconocidos por nuestra calidad, innovación y compromiso con la excelencia. Queremos ser el estándar de calidad en nuestro sector.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="font-size: 2.5rem; font-weight: 900; letter-spacing: 6px; text-transform: uppercase; text-align: center; margin: 4rem 0 2rem;">
+                NUESTRAS METAS
+            </h3>
+
+            <div class="stats-section">
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <p class="stat-label">Satisfacción del Cliente</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <p class="stat-label">Productos Únicos</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number">5</div>
+                    <p class="stat-label">Puntos de Venta (Meta 2026)</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number">1000+</div>
+                    <p class="stat-label">Clientes Satisfechos</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 DULCE ARTESANO - TODOS LOS DERECHOS RESERVADOS</p>
+        <p style="margin-top: 1rem;">BRAYAN JECID VARGAS CALDERÓN & JHON ANTHONY ROA PARADA</p>
+    </footer>
+</body>
+</html>

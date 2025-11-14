@@ -1,0 +1,391 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propietarios - Dulce Artesano</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <style>
+                body {
+            background: #f9f9f9;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #222;
+        }
+
+        /* --- ENCABEZADO --- */
+        .logo-header {
+            text-align: center;
+            padding: 1.5rem 0;
+            background: #fff;
+        }
+
+        .logo-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin: 0;
+        }
+
+        .logo-header p {
+            font-size: 1rem;
+            color: #555;
+            margin-top: 0.3rem;
+        }
+
+        /* --- MENÚ --- */
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .btn-nav {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 2px;
+            padding: 0.8rem 1.5rem;
+            text-transform: uppercase;
+            border-radius: 50px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .btn-nav:hover {
+            background: #fff;
+            color: #000;
+            border-color: #000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .btn-home {
+            background: #fff;
+            color: #000;
+            border: 2px solid #fff;
+        }
+
+        .btn-home:hover {
+            background: transparent;
+            color: #fff;
+            border-color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn-nav {
+                width: 80%;
+                text-align: center;
+            }
+        }
+
+        /* --- HERO PRINCIPAL --- */
+        .contact-hero {
+            background: #000;
+            color: #fff;
+            padding: 5rem 2rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            background-image: linear-gradient(135deg, #000 60%, #222);
+        }
+
+        .contact-hero h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .contact-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* --- TARJETAS DE CONTACTO --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            padding: 0 5%;
+        }
+
+        .contact-card {
+            background: #fff;
+            border: 4px solid #000;
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            border-radius: 15px;
+        }
+
+        .contact-card:hover {
+            background: #000;
+            color: #fff;
+            transform: translateY(-10px);
+        }
+
+        .contact-card-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-card h3 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card:hover a {
+            color: #fff;
+        }
+
+        .contact-card p {
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+            line-height: 1.6;
+        }
+
+        /* --- HORARIOS --- */
+        .schedule-section {
+            background: #fff;
+            border: 4px solid #000;
+            border-radius: 15px;
+            padding: 3rem;
+            text-align: center;
+            margin: 5rem auto;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .schedule-section h3 {
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .schedule-section p {
+            font-size: 1.1rem;
+            margin: 0.7rem 0;
+        }
+        .owners-hero {
+            background: #fff;
+            color: #000;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            border: 5px solid #000;
+        }
+
+        .owners-hero h2 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+        }
+
+        .owners-icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+        }
+
+        .owners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .owner-card {
+            background: #fff;
+            border: 4px solid #000;
+            padding: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .owner-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .owner-header {
+            background: #000;
+            color: #fff;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .owner-avatar {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .owner-header h3 {
+            font-size: 1.6rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .owner-role {
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        .owner-content {
+            padding: 2.5rem;
+        }
+
+        .owner-content p {
+            font-size: 1.05rem;
+            line-height: 2;
+            text-align: justify;
+        }
+
+        .team-message {
+            background: #000;
+            color: #fff;
+            padding: 4rem 3rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .team-message h3 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .team-message p {
+            font-size: 1.15rem;
+            line-height: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .owners-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .owners-hero h2 {
+                font-size: 2rem;
+                letter-spacing: 4px;
+            }
+
+            .team-message h3 {
+                font-size: 1.8rem;
+                letter-spacing: 3px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header-fixed">
+        <div class="logo-header">
+            <h1>DULCE ARTESANO</h1>
+            <p>Pastelería & Panadería</p>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="btn-nav btn-home">INICIO</a>
+            <a href="vision.html" class="btn-nav">VISIÓN</a>
+            <a href="mision.html" class="btn-nav">MISIÓN</a>
+            <a href="objetivos.html" class="btn-nav">OBJETIVOS</a>
+        </nav>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <div class="container">
+            <div class="owners-hero">
+                <div class="owners-icon">👥</div>
+                <h2>NUESTROS PROPIETARIOS</h2>
+            </div>
+
+            <div class="owners-grid">
+                <!-- Propietario 1 -->
+                <div class="owner-card">
+                    <div class="owner-header">
+                        <div class="owner-avatar"><img src="Carlos.jpeg" alt="" width="500" height="700"></div>
+                        <h3>CARLOS VARGAS</h3>
+                        <p class="owner-role">Cofundador & Chef Pastelero Principal</p>
+                    </div>
+                    <div class="owner-content">
+                        <p>
+                            Con más de 10 años de experiencia en repostería artesanal, Carlos es el cerebro creativo detrás de nuestras recetas únicas. Su pasión por la innovación y el compromiso con la calidad han sido fundamentales para el éxito de Dulce Artesano.
+                        </p>
+                        <p style="margin-top: 1.5rem;">
+                            Especializado en técnicas de repostería francesa y diseño de pasteles personalizados, ha llevado la marca a convertirse en un referente de excelencia en la región. Su filosofía: "Cada postre debe ser una obra de arte que cuente una historia".
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Propietario 2 -->
+                <div class="owner-card">
+                    <div class="owner-header">
+                        <div class="owner-avatar"><img src="Yurley.jpeg" width="500" height="700" ></div>
+                        <h3>Yurley Arquello</h3>
+                        <p class="owner-role">Cofundador & Director de Operaciones</p>
+                    </div>
+                    <div class="owner-content">
+                        <p>
+                            Yurley se encarga de la gestión administrativa y comercial del negocio, asegurando que cada cliente reciba un servicio excepcional. Su visión empresarial y dedicación han sido claves para el crecimiento sostenido de la pastelería.
+                        </p>
+                        <p style="margin-top: 1.5rem;">
+                            Con formación en administración de empresas y un profundo conocimiento del mercado gastronómico, ha logrado establecer alianzas estratégicas y expandir la presencia de la marca. Su lema: "La satisfacción del cliente es nuestro mayor logro".
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-message">
+                <h3>NUESTRO EQUIPO</h3>
+                <p>
+                    Este proyecto académico fue desarrollado como requisito para optar al título de Bachiller Técnico en Informática del Colegio Integrado Camilo Torres.
+Su elaboración forma parte del proceso de formación integral que promueve la institución, orientado al desarrollo de competencias técnicas, investigativas y éticas en el campo de la informática.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>©️ Colegio Integrado Camilo Torres. Todos los derechos reservados. – 2025</p>
+        <p style="margin-top: 1rem;">BRAYAN JECID VARGAS CALDERÓN & JHON ANTHONY ROA PARADA</p>
+    </footer>
+</body>
+</html>
